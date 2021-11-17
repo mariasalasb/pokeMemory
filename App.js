@@ -13,15 +13,17 @@ export default function App() {
     LuckiestGuy: require('./assets/fonts/LuckiestGuy-Regular.ttf'),
   });
 
-  if(!loaded) return <AppLoading/>;
 
+  const [screen, setScreen]=useState('main');
 
-
+  const page = screen==='main' ? 
+  <Main changeScreen={setScreen}/>: <Start/>
+  
 
   return (
     <View style={styles.container}>
       <Header title="POKE MEMORY" />
-      <Main /> 
+      {page}
     </View>
   );
 }

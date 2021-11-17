@@ -4,15 +4,17 @@ import LottieView from 'lottie-react-native';
 
 const image = require('../assets/pokeBackground.jpg')  ;
 
-const Main = () => {
-    
+const Main = ({changeScreen}) => {
+
+    const handleScreen=()=>changeScreen('start')
+
     return(
         <>
         <View style={styles.container}>
             <ImageBackground source={image} resizeMode="cover" style={styles.image}>
             <Text style={styles.text}>POKE MEMORY</Text>
             </ImageBackground>
-            <TouchableOpacity style={styles.button} >
+            <TouchableOpacity style={styles.button} onPress={handleScreen}>
                 <LottieView 
                         source={require('../assets/66763-click.json')} 
                         style={styles.lottie}
