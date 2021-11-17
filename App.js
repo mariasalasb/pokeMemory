@@ -19,13 +19,17 @@ export default function App() {
   const page = screen==='main' ? 
   <Main changeScreen={setScreen}/>: <Start/>
   
+  if(!loaded){ return <AppLoading/>}
+  else{
+    return (
+      <View style={styles.container}>
+        <Header />
+        {page}
+      </View>
+    );
+  }
 
-  return (
-    <View style={styles.container}>
-      <Header title="POKE MEMORY" />
-      {page}
-    </View>
-  );
+  
 }
 
 const styles = StyleSheet.create({
