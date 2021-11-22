@@ -1,8 +1,13 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import colors from '../constants/colors';
+import {ScreenContext} from '../context/ScreenContext';
 
-const Header = ({ title }) => {
+const Header = () => {
+  const {screen}=useContext(ScreenContext);
+
+  const title=screen!=='main'? 'POKE MEMORY':''
+  
   return (
     <View style={styles.header}>
       <Text style={styles.headerTitle}>{title}</Text>
@@ -22,6 +27,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     color: 'black',
     fontSize: 22,
+    fontFamily:'LuckiestGuy'
   }
 });
 

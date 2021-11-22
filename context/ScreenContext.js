@@ -1,18 +1,19 @@
-import { createContext, useState } from 'react'
+import React, { createContext, useState } from 'react'
 
 export const ScreenContext = createContext()
 
 export const ScreenProvider = ({children}) => {
-    //const [screen,setScreen] = useState('main')
+    const [screen,setScreen] = useState('main')
 
-    const changeScreen=()=>{
+    const screenStart=()=>{
         return setScreen('start');
-
+    }
+    const screenMenu=()=>{
+        return setScreen('menu');
     }
 
-    
     return(
-        <ScreenContext.Provider value={{changeScreen}}>
+        <ScreenContext.Provider value={{screen,screenStart,screenMenu}}>
             {children}
         </ScreenContext.Provider>
     )

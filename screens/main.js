@@ -1,12 +1,16 @@
-import React from "react";
+import React,{useContext} from "react";
 import { ImageBackground, StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
 import LottieView from 'lottie-react-native';
+import { ScreenContext } from "../context/ScreenContext";
 
 const image = require('../assets/pokeBackground.jpg')  ;
 
-const Main = ({changeScreen}) => {
+const Main = ({navigation}) => {
+  //const Main = ({changeScreen}) => {
+    //const handleScreen=()=>changeScreen('start')
+    const {screenMenu}=useContext(ScreenContext);
 
-    const handleScreen=()=>changeScreen('start')
+    const handleScreen=()=>screenMenu()
 
     return(
         <>
@@ -14,7 +18,7 @@ const Main = ({changeScreen}) => {
             <ImageBackground source={image} resizeMode="cover" style={styles.image}>
             <Text style={styles.text}>POKE MEMORY</Text>
             </ImageBackground>
-            <TouchableOpacity style={styles.button} onPress={handleScreen}>
+            <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('menu/')}>
                 <LottieView 
                         source={require('../assets/66763-click.json')} 
                         style={styles.lottie}

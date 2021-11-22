@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState,useContext} from 'react';
 import { StyleSheet, View } from 'react-native';
 import Header from './components/Header';
-import Start from './screens/start';
-import Main from './screens/main';
 import {useFonts} from 'expo-font';
 import AppLoading from 'expo-app-loading';
-
+import {ScreenContext,ScreenProvider} from './context/ScreenContext';
+import Page from './screens/page';
+import ScreenNavigator from './navigation/ScreenNavigator';
 
 export default function App() {
 
@@ -13,18 +13,23 @@ export default function App() {
     LuckiestGuy: require('./assets/fonts/LuckiestGuy-Regular.ttf'),
   });
 
+  //const [screen, setScreen]=useState('main');
 
-  const [screen, setScreen]=useState('main');
+  //const page = screen==='main' ? 
+  //<Main changeScreen={setScreen}/>: <Start/>
 
-  const page = screen==='main' ? 
-  <Main changeScreen={setScreen}/>: <Start/>
+  //const Page = screen==='main' ? 
+  //<Main/>: <Start/>
+
   
   if(!loaded){ return <AppLoading/>}
   else{
     return (
       <View style={styles.container}>
-        <Header />
-        {page}
+        <ScreenProvider>
+          <Header/>
+          <ScreenNavigator/>
+        </ScreenProvider>
       </View>
     );
   }
