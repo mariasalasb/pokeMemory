@@ -6,6 +6,10 @@ import AppLoading from 'expo-app-loading';
 import {ScreenContext,ScreenProvider} from './context/ScreenContext';
 import Page from './screens/page';
 import ScreenNavigator from './navigation/ScreenNavigator';
+import MainNavigator from './navigation';
+import { Provider } from 'react-redux';
+import store from './store';
+import Cover from './screens/cover';
 
 export default function App() {
 
@@ -16,10 +20,10 @@ export default function App() {
   //const [screen, setScreen]=useState('main');
 
   //const page = screen==='main' ? 
-  //<Main changeScreen={setScreen}/>: <Start/>
+  //<Main changeScreen={setScreen}/>: <randomPick/>
 
   //const Page = screen==='main' ? 
-  //<Main/>: <Start/>
+  //<Main/>: <randomPick/>
 
   
   if(!loaded){ return <AppLoading/>}
@@ -28,7 +32,7 @@ export default function App() {
       <View style={styles.container}>
         <ScreenProvider>
           <Header/>
-          <ScreenNavigator/>
+          <MainNavigator/>
         </ScreenProvider>
       </View>
     );

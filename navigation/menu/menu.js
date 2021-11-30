@@ -1,19 +1,17 @@
 import React from "react";
 import { Platform, StyleSheet } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import colors from "../constants/colors";
-import cover from "../screens/cover";
-import Menu from "../screens/menu";
-import randomPick from "../screens/randomPick";
+import colors from "../../constants/colors";
+import cover from "../../screens/cover";
+import Menu from "../../screens/menu";
+import randomPick from "../../screens/randomPick";
 const Stack = createNativeStackNavigator();
 
 //Stack.Navigator guarda las rutas, puede haber N
 //Screen son las pantallas, puede haber N
 //NavigationContainer solo hay 1
 //el orden en que declaro los screens acá no influye en nada, salvo la primera que coloco que seria la principal a menos de que use initialRouteName
-const ScreenNavigator=()=>(
-    <NavigationContainer>
+const MenuNavigator=()=>(
         <Stack.Navigator 
             screenOptions={{
                 headerShown:false,
@@ -47,8 +45,6 @@ const ScreenNavigator=()=>(
                 }}            name="select/" 
             component={randomPick}/>
         </Stack.Navigator>
-    </NavigationContainer>
-
 );
 
  const styles= StyleSheet.create({
@@ -57,4 +53,4 @@ const ScreenNavigator=()=>(
     },
 }) 
 
-export default ScreenNavigator;
+export default MenuNavigator;

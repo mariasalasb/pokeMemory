@@ -5,9 +5,9 @@ import { ScreenContext } from "../context/ScreenContext";
 
 const image = require('../assets/pokeBackground.jpg')  ;
 
-const Main = ({navigation}) => {
-  //const Main = ({changeScreen}) => {
-    //const handleScreen=()=>changeScreen('start')
+const cover = ({navigation}) => {
+  //const cover = ({changeScreen}) => {
+    //const handleScreen=()=>changeScreen('randomPick')
     const {screenMenu}=useContext(ScreenContext);
 
     const handleScreen=()=>screenMenu()
@@ -65,4 +65,4 @@ const styles = StyleSheet.create({
 }
 });
 
-export default Main;
+export default cover;

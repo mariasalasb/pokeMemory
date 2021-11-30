@@ -6,7 +6,7 @@ import colors from '../constants/colors';
 import axios from 'axios';
 import { ScreenContext } from "../context/ScreenContext";
 
-const Start = () => {
+const randomPick = () => {
   //const [pokeCardColor, setPokeCardColor] = useState('');
   const [pokeList, setPokeList]= useState({});
   const [myPokeList, setMyPokeList]= useState([]);
@@ -123,4 +123,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Start;
+export default randomPick;

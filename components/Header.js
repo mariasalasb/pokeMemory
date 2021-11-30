@@ -6,7 +6,7 @@ import {ScreenContext} from '../context/ScreenContext';
 const Header = () => {
   const {screen}=useContext(ScreenContext);
 
-  const title=screen!=='main'? 'POKE MEMORY':''
+  const title=screen!=='cover'? 'POKE MEMORY':''
   
   return (
     <View style={styles.header}>

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import Start from './start';
-import Main from './main';
+import randomPickt from './randomPick';
+import cover from './cover';
 import Menu from './menu';
 import {ScreenContext} from '../context/ScreenContext';
 
@@ -10,10 +10,10 @@ const Page = () => {
   
     return screen === "menu" ? 
     (<Menu />) :
-    screen === "main" ?
-    (<Main/>) :
-    screen === "start" ?
-    (<Start/>) :<></>;
+    screen === "cover" ?
+    (<cover/>) :
+    screen === "randomPick" ?
+    (<randomPick/>) :<></>;
    };
 
    export default Page;

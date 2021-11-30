@@ -3,17 +3,17 @@ import React, { createContext, useState } from 'react'
 export const ScreenContext = createContext()
 
 export const ScreenProvider = ({children}) => {
-    const [screen,setScreen] = useState('main')
+    const [screen,setScreen] = useState('cover')
 
-    const screenStart=()=>{
-        return setScreen('start');
+    const screenRandomPick=()=>{
+        return setScreen('randomPick');
     }
     const screenMenu=()=>{
         return setScreen('menu');
     }
 
     return(
-        <ScreenContext.Provider value={{screen,screenStart,screenMenu}}>
+        <ScreenContext.Provider value={{screen,screenRandomPick,screenMenu}}>
             {children}
         </ScreenContext.Provider>
     )
