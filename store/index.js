@@ -1,9 +1,10 @@
-/* import {createStore, combineReducers} from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
-import CategoryReducer from './reducers/category.reducers';
+import PokeReducer from './reducers/poke.reducer';
 
 const RootReducer = combineReducers({
-    categories: CategoryReducer,
+  pokemons: PokeReducer,
 });
 
-export default createStore(RootReducer); */
+export default createStore(RootReducer, applyMiddleware(thunk));

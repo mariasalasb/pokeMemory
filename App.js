@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import Cover from './screens/cover';
 
+
 export default function App() {
 
   const [loaded] = useFonts({
@@ -30,15 +31,15 @@ export default function App() {
   else{
     return (
       <View style={styles.container}>
-        <ScreenProvider>
+        <Provider store={store}>
+         <ScreenProvider>
           <Header/>
           <MainNavigator/>
-        </ScreenProvider>
+         </ScreenProvider>
+        </Provider>   
       </View>
     );
   }
-
-  
 }
 
 const styles = StyleSheet.create({
