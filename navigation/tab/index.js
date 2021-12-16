@@ -6,6 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import GameNavigator from '../game';
 import MenuNavigator from '../menu/menu';
 import PokeNavigator from '../pokemons';
+import CreatePokemon from '../createPokemon'
 import colors from '../../constants/colors';
 
 const BottomTabs = createBottomTabNavigator();
@@ -50,7 +51,19 @@ const TabNavigator = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.item}>
                 <MaterialCommunityIcons name="pokemon-go" size={24} color={focused ? colors.primary : 'black'}  />
-              <Text>Mis Pokemon</Text>
+              <Text>Pokemones</Text>
+            </View>
+          )
+        }}
+      />
+      <BottomTabs.Screen
+        name="CreatePoke"
+        component={CreatePokemon}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={styles.item}>
+                <Ionicons name="camera" size={24} color={focused ? colors.primary : 'black'} />
+              <Text>Crear</Text>
             </View>
           )
         }}
